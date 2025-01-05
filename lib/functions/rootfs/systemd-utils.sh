@@ -14,3 +14,11 @@ function disable_systemd_service_sdcard() {
 		chroot_sdcard systemctl --no-reload disable "${service}" "||" true
 	done
 }
+
+function enable_systemd_service_sdcard() {
+	display_alert "Enabling systemd service(s) on target" "${*}" "debug"
+	declare service
+	for service in "${@}"; do
+		chroot_sdcard systemctl --no-reload enable "${service}" "||" true
+	done
+}
