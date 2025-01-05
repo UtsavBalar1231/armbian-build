@@ -663,7 +663,7 @@ if [[ -f /root/.not_logged_in_yet && -n $(tty) ]]; then
 	systemctl is-system-running --wait > /dev/null
 
 	# enable hiDPI support
-	if [[ "$(cut -d, -f1 < /sys/class/graphics/fb0/virtual_size 2> /dev/null)" -gt 1920 ]]; then
+	if [[ "$(cut -d, -f1 < /sys/class/graphics/fb0/virtual_size 2> /dev/null)" -gt 1600 ]]; then
 		# lightdm
 		[[ -f /etc/lightdm/slick-greeter.conf ]] && echo "enable-hidpi = on" >> /etc/lightdm/slick-greeter.conf
 		# xfce
