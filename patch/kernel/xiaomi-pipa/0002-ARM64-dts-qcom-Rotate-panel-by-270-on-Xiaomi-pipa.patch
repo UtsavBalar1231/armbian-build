@@ -1,0 +1,35 @@
+From 7a8d952a31be0fcd7a9beac5c005bee06f2628b0 Mon Sep 17 00:00:00 2001
+From: UtsavBalar1231 <utsavbalar1231@gmail.com>
+Date: Mon, 6 Jan 2025 00:06:14 +0530
+Subject: [PATCH 2/2] ARM64: dts: qcom: Rotate panel by 270 on Xiaomi pipa
+
+Change-Id: Ie90e0a57480624157a6b054cf91c9177dadb8034
+Signed-off-by: UtsavBalar1231 <utsavbalar1231@gmail.com>
+---
+ arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dts | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dts b/arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dts
+index 286671e4845c..7daddc9b7c76 100644
+--- a/arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dts
++++ b/arch/arm64/boot/dts/qcom/sm8250-xiaomi-pipa.dts
+@@ -701,6 +701,7 @@ panel: panel@0 {
+ 		pinctrl-0 = <&sde_dsi_active &sde_te_active_sleep>;
+ 		pinctrl-1 = <&sde_dsi_sleep &sde_te_active_sleep>;
+ 		pinctrl-names = "default", "sleep";
++		rotation = <270>;
+ 
+ 		ports {
+ 			#address-cells = <1>;
+@@ -1186,7 +1187,7 @@ PDO_FIXED_USB_COMM |
+ 				       PDO_FIXED_DATA_SWAP)
+ 				       PDO_VAR(5000, 9000, 5000)>;
+         
+-        altmodes {
++        	altmodes {
+ 			displayport {
+ 				svid = <0xff01>;
+ 				vdo = <0x00001c46>;
+-- 
+2.34.1
+
